@@ -1,0 +1,48 @@
+<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+
+<input type="file" id="docxInput" accept=".docx" />
+
+<script>
+document.getElementById("docxInput").addEventListener("change", async function (event) {
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  const arrayBuffer = await file.arrayBuffer();
+
+  mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+    .then(function (result) {
+      let html = result.value;
+
+      // OPTIONAL: enforce paragraph formatting cleanup
+      // Mammoth already outputs <p> tags by default, but this ensures consistency
+      html = html
+        .replace(/\n/g, "") // remove stray newlines
+        .replace(/<\/p>/g, "</p>\n"); // readable separation in console
+
+      console.log("===== CONVERTED HTML START =====");
+      console.log(html);
+      console.log("===== CONVERTED HTML END =====");
+
+      // If you want full document output:
+      const fullDocument = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Converted Story</title>
+</head>
+<body>
+${html}
+</body>
+</html>
+      `;
+
+      console.log("===== FULL HTML DOCUMENT =====");
+      console.log(fullDocument);
+    })
+    .catch(function (err) {
+      console.error("Conversion error:", err);
+    });
+});
+</script>

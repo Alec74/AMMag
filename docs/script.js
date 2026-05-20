@@ -1,3 +1,14 @@
+
+/*
+const mammoth = require("mammoth");
+
+mammoth.convertToHtml({path: "../Mother's Room.docx"})
+  .then(result => {
+    console.log(result.value);
+  })
+*/
+
+
 function toggleText(id) {
   const element = document.getElementById(id);
 
