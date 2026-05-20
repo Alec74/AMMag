@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alec McGlone | Writing Portfolio</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="hero">
+            <p>Poems • Short Stories • Lyrics</p>
+
+            <h1>Alec McGlone</h1>
+
+            <div class="description">
+                An accountability website for my venture into the world of writing short stories and longer. I mainly
+                focus on science fiction with an interest in mental health and philosophy.
+            </div>
+
+            <div class="buttons">
+                <a href="#works" class="btn btn-primary">Explore Works</a>
+                <a href="#about" class="btn">About the Author</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="works">
+        <div class="container">
+            <div class="section-subtitle">Featured Collection</div>
+            <h2 class="section-title">Selected Writing</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-type">Short Story</div>
+                    <h3>The Last Signal</h3>
+                    <p>A drifting station at the edge of known space receives a message that should be impossible.</p>
+                    <span class="read-more" onclick="toggleText('story1')">Read More</span>
+                    <div id="story1" class="hidden">
+                        Full story preview text can go here.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-type">Poem</div>
+                    <h3>Ashes in December</h3>
+                    <p>A reflective poem about memory, winter, and the passing of time.</p>
+                    <span class="read-more" onclick="toggleText('poem1')">Read More</span>
+                    <div id="poem1" class="hidden">
+                        Full poem preview text can go here.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-type">Song Lyrics</div>
+                    <h3>Neon Saints</h3>
+                    <p>Lyrics exploring ambition, isolation, and city lights after midnight.</p>
+                    <span class="read-more" onclick="toggleText('lyrics1')">Read More</span>
+                    <div id="lyrics1" class="hidden">
+                        Full lyrics preview text can go here.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <div class="category-grid">
+
+                <div class="category">
+                    <h3>Short Stories</h3>
+                    <p>Science fiction and more focused on technology, war, and alien uprisings.</p>
+                </div>
+
+                <div class="category">
+                    <h3>Poetry</h3>
+                    <p>Poems about a general place in the world and a hope for a brighter tomorrow.</p>
+                </div>
+
+                <div class="category">
+                    <h3>Song Lyrics</h3>
+                    <p>Love, despair, and looking for that new person to share it all with.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container about">
+
+            <div>
+                <div class="section-subtitle">About</div>
+                <h2 class="section-title">I've had ideas for writing since 2019, its finally time for me to act on them.
+                </h2>
+            </div>
+
+            <div>
+                <p>
+                    I made this website to keep myself accountable to continueing to grow as a writer. My goal is a
+                    collection of one hundred short stories, not all of them will be published but hopefully all will be
+                    written. I enjoy writing science fiction, topics about future advancements, and mental health
+                    related episodes. I also write poems and lyrics because they interest me.
+                <p>
+                    My influences are Fyodor Dostoyevsky, Isaac Asimov, and James Dashner to name a few. I recently
+                    discovered the public library's catalogue on the libby app!
+                </p>
+
+                <p>
+                    I will try to keep this updated as often as I can.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="newsletter">
+                <div class="section-subtitle">Stay Updated</div>
+                <h2 class="section-title">Follow future projects and new releases.</h2>
+
+                <p>
+                    Subscribe for updates on new stories, poems, lyrics, and long-form creative projects.
+                </p>
+
+                <form class="newsletter-form" onsubmit="subscribe(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                </form>
+
+                <div id="subscribe-message" class="hidden">
+                    Thank you for subscribing.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Alec McGlone. All rights reserved.
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
